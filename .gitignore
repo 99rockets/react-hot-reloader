@@ -1,0 +1,8 @@
+.DS_Store
+*.out
+out
+node_modules
+.idea
+.vimrc
+.vscode
+bundle.js

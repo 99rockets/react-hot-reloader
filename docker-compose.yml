@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    server:
+        build: ./services/server
+    client:
+        build: ./services/client
+        command: npm run dev
+        volumes:
+            - ./services/client:/var/lib/wallet/client
