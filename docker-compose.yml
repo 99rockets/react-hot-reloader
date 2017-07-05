@@ -9,7 +9,6 @@ services:
     client:
         build: ./services/client
         container_name: client
-        command: npm run dev
         volumes:
             - ./services/client:/var/lib/wallet/client
         ports:
