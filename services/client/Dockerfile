@@ -11,4 +11,6 @@ ENV PATH /var/lib/wallet/node_modules/.bin:$PATH
 
 COPY . .
 
+EXPOSE 8080
+
 CMD npm start

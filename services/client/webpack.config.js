@@ -3,7 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
+        'webpack-dev-server/client?http://0.0.0.0:8080',
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch',
         path.resolve(__dirname, 'src')
@@ -16,6 +16,8 @@ module.exports = {
     },
     devServer: {
         hot: true,
+        disableHostCheck: true,
+        headers: { 'Access-Control-Allow-Origin': '*' },
     },
     module: {
         rules: [{

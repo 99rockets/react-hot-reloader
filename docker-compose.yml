@@ -3,8 +3,14 @@ version: '2'
 services:
     server:
         build: ./services/server
+        container_name: server
+        ports:
+            - "3000:3000"
     client:
         build: ./services/client
+        container_name: client
         command: npm run dev
         volumes:
             - ./services/client:/var/lib/wallet/client
+        ports:
+            - "8080:8080"
