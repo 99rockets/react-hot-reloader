@@ -3,15 +3,19 @@ const webpack = require('webpack')
 
 module.exports = {
     entry: [
-      'webpack-dev-server/client?http://localhost:3001',
-      'webpack/hot/only-dev-server',
-      'react-hot-loader/patch',
-      path.resolve(__dirname, 'src')
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
+        'react-hot-loader/patch',
+        path.resolve(__dirname, 'src')
     ],
+
     output: {
-      path: path.join(__dirname, 'public'),
-      filename: 'bundle.js',
-      publicPath: '/static/'
+        path: path.join(__dirname, 'public'),
+        filename: 'bundle.js',
+        publicPath: '/static/'
+    },
+    devServer: {
+        hot: true,
     },
     module: {
         rules: [{

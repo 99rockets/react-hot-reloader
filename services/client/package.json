@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot",
-    "start": "webpack -d --watch",
+    "dev": "webpack-dev-server --hot --host 0.0.0.0 --watch --watch-poll",
+    "start": "webpack -d --watch"
   },
   "license": "MIT",
   "dependencies": {
