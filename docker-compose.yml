@@ -10,6 +10,17 @@ services:
         build: ./services/client
         container_name: client
         volumes:
-            - ./services/client:/var/lib/wallet/client
+            - ./services/client:/opt/react-hot-reloader/client
         ports:
             - "8080:8080"
+    proxy:
+        build: ./services/proxy
+        container_name: proxy
+        depends_on:
+            - server
+            - client
+        ports:
+            - "80:80"
+            - "443:443"
+        logging:
+            driver: none
