@@ -7,8 +7,7 @@ WORKDIR $APP_DIR
 
 COPY ./package.json /tmp/package.json
 RUN cd /tmp && npm install
-# RUN mv /tmp/node_modules $APP_DIR/node_modules
-RUN mv /tmp/node_modules ../node_modules
+RUN mv /tmp/node_modules $APP_DIR/node_modules
 
 COPY . .
 
