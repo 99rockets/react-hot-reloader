@@ -4,6 +4,9 @@ build:
 dev:
 	docker-compose up --build
 
+stop:
+	docker-compose stop
+
 docker-cleanup:
 	docker volume rm $$(docker volume ls -qf dangling=true)
 	docker rmi $$(docker images -a | grep "^<none>" | awk '{print $3}')

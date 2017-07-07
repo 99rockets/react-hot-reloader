@@ -2,7 +2,13 @@ const express = require('express')
 
 const app = express()
 
+app.set('view engine', 'pug')
+
 app.get('/', (req, res) => {
+    res.render('index')
+})
+
+app.get('/api', (req, res) => {
     res.send('Welcome to server')
 })
 
