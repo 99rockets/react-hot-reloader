@@ -4,7 +4,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base=www --hot --inline --watch --config=webpack/webpack.config.development.babel.js",
-    "clean": "rm -rf /client/dist/*"
+    "build": "rm -r dist/* && webpack -p --config=webpack/webpack.config.production.babel.js --progress --color",
+    "clean": "rm -rf dist/*"
   },
   "license": "MIT",
   "dependencies": {
