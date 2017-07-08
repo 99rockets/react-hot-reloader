@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "server": "webpack-dev-server --config=./webpack/webpack.config.development.babel.js --content-base=www --inline --watch",
-    "dev": "webpack -d --watch --config=./webpack/webpack.config.development.babel.js --progress --colors",
+    "dev": "webpack-dev-server --content-base=www --hot --inline --watch --config=webpack/webpack.config.development.babel.js",
     "clean": "rm -rf /client/dist/*"
   },
   "license": "MIT",

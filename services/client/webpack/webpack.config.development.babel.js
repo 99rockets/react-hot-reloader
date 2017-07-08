@@ -5,8 +5,6 @@ import base_config from './webpack.config.base.babel'
 export default {
     ...base_config,
     entry: [
-        // 'webpack-dev-server/client?http://0.0.0.0:8080',
-        // 'webpack/hot/only-dev-server',
         ...base_config.entry
     ],
     output: {
@@ -16,14 +14,6 @@ export default {
     },
     plugins: [
         ...base_config.plugins,
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
-    ],
-    devServer: {
-        hot: true,
-        host: "0.0.0.0",
-        inline: true,
-        publicPath: '/static/'
-    }
+    ]
 }
