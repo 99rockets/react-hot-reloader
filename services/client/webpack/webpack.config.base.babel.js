@@ -2,12 +2,12 @@ import path from 'path'
 import webpack from 'webpack'
 
 export default {
+    devtool: 'source-map',
     entry: [
         path.resolve(__dirname, '../src')
     ],
-    devtool: 'source-map',
     output: {
-        path: path.join(__dirname, '../public'),
+        path: path.join(__dirname, '../dist'),
         publicPath: '/static/',
     },
     module: {
@@ -15,9 +15,9 @@ export default {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: [
-                    'babel-loader',
-                ],
+                use: {
+                    loader: 'babel-loader'
+                },
             }
         ]
     },
