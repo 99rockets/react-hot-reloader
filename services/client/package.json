@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base=www --hot --inline --watch --config=webpack/webpack.config.development.babel.js",
+    "dev": "webpack-dev-server --hot --inline --watch --config=webpack/webpack.config.development.babel.js",
     "build": "rm -r dist/* && webpack -p --config=webpack/webpack.config.production.babel.js --progress --color",
     "clean": "rm -rf dist/*"
   },

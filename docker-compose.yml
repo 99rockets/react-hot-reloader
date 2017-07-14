@@ -6,11 +6,14 @@ services:
         container_name: server
         ports:
             - "3000:3000"
+        volumes:
+            - assets:/opt/react-hot-reloader/assets
     client:
         build: ./services/client
         container_name: client
         volumes:
             - ./services/client:/opt/react-hot-reloader/client
+            - assets:/opt/react-hot-reloader/client/dist
         ports:
             - "8080:8080"
     proxy:
@@ -22,5 +25,10 @@ services:
         ports:
             - "80:80"
             - "443:443"
+        volumes:
+            - assets:/opt/react-hot-reloader/assets
         logging:
             driver: none
+
+volumes:
+    assets:

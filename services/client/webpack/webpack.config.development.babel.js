@@ -9,11 +9,20 @@ export default {
     ],
     output: {
         ...base_config.output,
-        publicPath: 'http://localhost:8080' + base_config.output.publicPath,
+        publicPath: 'http://0.0.0.0:8080' + base_config.output.publicPath,
         filename: 'bundle.js'
     },
     plugins: [
         ...base_config.plugins,
         new webpack.NoEmitOnErrorsPlugin()
-    ]
+    ],
+    devServer: {
+        hot: true,
+        inline: true,
+        port: 8080,
+        host: '0.0.0.0',
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        }
+    }
 }
