@@ -7,7 +7,8 @@ WORKDIR $APP_DIR
 
 COPY ./package.json /tmp/package.json
 RUN cd /tmp && npm install
-RUN mv /tmp/node_modules $APP_DIR/node_modules
+RUN mv /tmp/node_modules ../node_modules
+ENV PATH /opt/react-hot-reloader/node_modules/.bin:$PATH
 
 COPY . .
 
